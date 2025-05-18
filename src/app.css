@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+    }
+
+    .animate-fade-in-delay-1 {
+        opacity: 0;
+        animation: fadeIn 1s ease-out 0.2s forwards;
+    }
+
+    .animate-fade-in-delay-2 {
+        opacity: 0;
+        animation: fadeIn 1s ease-out 0.4s forwards;
+    }
+
+    .animate-fade-in-delay-3 {
+        opacity: 0;
+        animation: fadeIn 1s ease-out 0.6s forwards;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Base styles */
+body {
+    @apply bg-wedding-bg text-wedding-dark font-serif selection:bg-wedding-light min-h-screen;
+}
+
+/* Typography */
+h1 {
+    @apply text-5xl md:text-6xl font-bold text-center text-wedding-accent my-8 tracking-tight;
+}
+
+h2 {
+    @apply text-3xl md:text-4xl font-semibold text-center text-wedding-primary my-6;
+}
+
+h3 {
+    @apply text-2xl font-medium text-wedding-secondary my-4;
+}
+
+p {
+    @apply text-lg text-wedding-dark/80 leading-relaxed my-4 max-w-prose mx-auto;
+}
+
+/* Interactive Elements */
+.btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg 
+           font-medium transition duration-200 ease-in-out
+           focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+.btn-primary {
+    @apply btn bg-wedding-primary text-white hover:bg-wedding-primary/90 
+           active:bg-wedding-primary/80 focus-visible:outline-wedding-primary;
+}
+
+.btn-secondary {
+    @apply btn bg-white text-wedding-primary border border-wedding-light 
+           hover:bg-wedding-light/50 active:bg-wedding-light;
+}
+
+/* Layout Components */
+.container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+.section {
+    @apply py-12 md:py-24;
+}
+
+.card {
+    @apply bg-white rounded-xl shadow-sm p-6 transition duration-200 hover:shadow-md;
+}
+
+/* Navigation */
+.nav {
+    @apply sticky top-0 z-50 w-full backdrop-blur-sm bg-white/80 py-4;
+}
+
+.nav-link {
+    @apply text-wedding-dark/70 hover:text-wedding-primary transition-colors 
+           px-4 py-2 rounded-md text-sm font-medium;
+}
+
+/* Hero Section */
+.hero {
+    @apply relative min-h-[70vh] flex items-center justify-center 
+           bg-gradient-to-b from-wedding-light to-wedding-bg;
+}
+
+/* Gallery */
+.gallery {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.gallery-item {
+    @apply aspect-square rounded-xl overflow-hidden;
+}
+
+.gallery-img {
+    @apply w-full h-full object-cover transition duration-500 
+           hover:scale-105;
+}
+
+/* Form Elements */
+.input {
+    @apply w-full px-4 py-2 rounded-lg focus:ring-2 
+           focus:ring-wedding-primary/20 outline-none transition 
+           placeholder:text-wedding-dark/40;
+}
+
+.label {
+    @apply block text-sm font-medium text-wedding-dark/80 mb-2;
+}
+
+/* Timeline */
+.timeline {
+    @apply space-y-8;
+}
+
+.timeline-item {
+    @apply relative pl-8;
+}
+
+/* Footer */
+.footer {
+    @apply bg-wedding-light/30 py-12 mt-24 text-wedding-dark/60;
+}
+
+/* Animations */
+.fade-in {
+    @apply motion-safe:animate-[fadeIn_0.5s_ease-out];
+}
